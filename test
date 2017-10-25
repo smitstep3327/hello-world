@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<script>
+var choice = new Array()
+count = 0;
+var count1;
+var stopFlag;
+stopFlag = true;
+   function selectPic(x)
+    { 
+        document.images[count+20].src = document.images[x].src
+        choice[count] = document.images[x].src
+        count++         
+    }
+    function reset()
+    {
+        for (i=20;i<(count+20);i++)
+            document.images[i].src = " "
+        choice = []
+        count = 0
+    }
+    function undoPic()
+    {
+        document.images[count+19].src = " "
+        choice[count-1] = " "
+        count = count - 1
+    }
+    function startAni()
+    {
+	    
+	    	
+    		if(stopFlag == false){
+	    		
+	    		if(count1 == count){
+		    		
+		    		count1 = 20;
+		    		
+	    		}
+				count1++;
+               document.images[40].src = document.images[count1].src 
+               window.setTimeout(function (){startAni()}, 1000); 
+                 		
+               }
+ 
+               
+      
+    }
+    function startImage(){
+	    
+	    if(stopFlag == true){
+		    
+		    stopFlag = false;
+		    count1 = 20;
+		    startAni();
+	    }
+	  
+	   
+	    
+    }
+    
+   function stopAni(){
+	   
+	   stopFlag = true;
+   }
+</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+    <title>Make Your Own Animation</title>
+</head>
+
+<body>
+    <h1> Make Your Own Animation </h1>
+    <p> Select the images below by clicking them in the order you would like in the animation. Pictures will be displayed below in the chosen order. Click start animation to watch!</p>
+        <img src = "1.jpg" onclick="selectPic(0)" >
+        <img src = "2.jpg" onclick="selectPic(1)" >
+        <img src = "3.jpg" onclick="selectPic(2)" >
+        <img src = "4.jpg" onclick="selectPic(3)" >
+        <img src = "5.jpg" onclick="selectPic(4)" >
+        <img src = "6.jpg" onclick="selectPic(5)" >
+        <img src = "7.jpg" onclick="selectPic(6)" >
+        <img src = "8.jpg" onclick="selectPic(7)" >
+        <img src = "9.jpg" onclick="selectPic(8)" >
+        <img src = "10.jpg" onclick="selectPic(9)" >
+        <img src = "11.jpg" onclick="selectPic(10)" >
+        <img src = "12.jpg" onclick="selectPic(11)" >
+        <img src = "13.jpg" onclick="selectPic(12)" >
+        <img src = "14.jpg" onclick="selectPic(13)" >
+        <img src = "15.jpg" onclick="selectPic(14)" >
+        <img src = "16.jpg" onclick="selectPic(15)" >
+        <img src = "17.jpg" onclick="selectPic(16)" >
+        <img src = "18.jpg" onclick="selectPic(17)" >
+        <img src = "19.jpg" onclick="selectPic(18)" >
+        <img src = "20.jpg" onclick="selectPic(19)" ><br>
+    <input type="button" 
+    onclick="undoPic()" 
+    value="Undo Last Choice" style="width:185px">
+    <input type="button" 
+    onclick="reset()" 
+    value="Reset" style="width:85px"><br>
+    <h2>Chosen Animation Pictures</h2>
+    <img src=" " id="20">
+    <img src=" " id="21">
+    <img src=" " id="22">
+    <img src=" " id="23">
+    <img src=" " id="24">
+    <img src=" " id="25">
+    <img src=" " id="26">
+    <img src=" " id="27">
+    <img src=" " id="28">
+    <img src=" " id="29">
+    <img src=" " id="30">
+    <img src=" " id="31">
+    <img src=" " id="32">
+    <img src=" " id="33">
+    <img src=" " id="34">
+    <img src=" " id="35">
+    <img src=" " id="36">
+    <img src=" " id="37">
+    <img src=" " id="38">
+    <img src=" " id="39"><br>
+    ______________________________________________________________________________________________________________<br>
+    <br>
+    <br>
+    <br>
+    <img src=" " id="40"> <br>
+    <input type="button" 
+    onclick="startImage()"  
+    value="Start Animation" style="width:150px">  
+    <input type="button" 
+    onclick="stopAni()" 
+    value="Stop Animation" style="width:150px">
+    
+    <p> Kayla Chapin: 217 <br>
+	    Stephanie Smith: 130 <br>
+	    Gabriella Del Duca: 130
+    </p>    
+    
+</body>
+    
+</html>
